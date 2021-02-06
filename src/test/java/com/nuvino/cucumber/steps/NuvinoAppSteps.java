@@ -3,6 +3,7 @@ package com.nuvino.cucumber.steps;
 import java.io.FileNotFoundException;
 
 import com.nuvino.cucumber.serenity.BadFilterSteps;
+import com.nuvino.cucumber.serenity.BinLookupSteps;
 import com.nuvino.pojo.badtextrequest;
 import com.nuvino.pojo.postbadtextresponse;
 import com.nuvino.utility.ReusableSpecification;
@@ -17,6 +18,9 @@ public class NuvinoAppSteps {
 	
 	@Steps
 	BadFilterSteps cbs;
+	
+	@Steps
+	BinLookupSteps bins;
 	
 	public postbadtextresponse cbres;
 	
@@ -81,9 +85,8 @@ public class NuvinoAppSteps {
 	
 	//User sends a POSt request to BIN Look Up API with a Valid BIN
 	@When("^User sends a POSt request to BIN Look Up API with a Valid BIN$")
-	public void BINLookUPres() {
-		SerenityRest.given().log().all().queryParams("user-id","mghosh","api-key","st2o7Wn8J8rUA7AQpTQjXVKFU5AYFQiPA0zUBHGSBa0s4v4N").header("Content-Type","application/json")
-		.body("{\"bin-number\":\"45178\"}").when().post("/bin-lookup")
-		.then().log().all().statusCode(200);
+	public void BINLookUPres() throws FileNotFoundException {
+		String binreq = "458913";
+		bins.BinLookUp(binreq);
 	}
 }
