@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.nuvino.cucumber.NuvinoRunner" time="1.281" tests="12" errors="0" skipped="0" failures="0">
+<testsuite name="com.nuvino.cucumber.NuvinoRunner" time="1.735" tests="14" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_241.jdk/Contents/Home/jre/lib"/>
@@ -25,7 +25,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="os.name" value="Mac OS X"/>
-    <property name="classworlds.conf" value="/Users/mousumighosh/Selenium/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf6235564766479020165.tmp"/>
+    <property name="classworlds.conf" value="/Users/mousumighosh/Selenium/.metadata/.plugins/org.eclipse.m2e.launching/launches/m2conf6709820994221351713.tmp"/>
     <property name="sun.jnu.encoding" value="UTF-8"/>
     <property name="java.library.path" value="/Users/mousumighosh/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
@@ -61,16 +61,18 @@
     <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase name="When User sends a POST request" classname="Scenario: Check if the Bad Text Filter APLI is working correctly" time="0.001"/>
-  <testcase name="Scenario: Check if the Bad Text Filter APLI is working correctly" classname="Scenario: Check if the Bad Text Filter APLI is working correctly" time="1.159"/>
+  <testcase name="When User sends a POSt request to BIN Look Up API with a Valid BIN" classname="Scenario: Check if the BIN LookUp APIis working correctly" time="0.001"/>
+  <testcase name="Scenario: Check if the BIN LookUp APIis working correctly" classname="Scenario: Check if the BIN LookUp APIis working correctly" time="1.428"/>
+  <testcase name="When User sends a POST request" classname="Scenario: Check if the Bad Text Filter APLI is working correctly" time="0"/>
+  <testcase name="Scenario: Check if the Bad Text Filter APLI is working correctly" classname="Scenario: Check if the Bad Text Filter APLI is working correctly" time="0.037"/>
   <testcase name="When User sends a POST request without any value for parameter status code 400 is returned" classname="Scenario: Negative Test when API POST request is made with no parameter for required key" time="0"/>
-  <testcase name="Scenario: Negative Test when API POST request is made with no parameter for required key" classname="Scenario: Negative Test when API POST request is made with no parameter for required key" time="0.047"/>
+  <testcase name="Scenario: Negative Test when API POST request is made with no parameter for required key" classname="Scenario: Negative Test when API POST request is made with no parameter for required key" time="0.038"/>
   <testcase name="When User sends a POST request with a invalid api-key and valid userid and required valid parameter" classname="Scenario: Negative Test when API POST Request with invalid api-key" time="0"/>
-  <testcase name="Scenario: Negative Test when API POST Request with invalid api-key" classname="Scenario: Negative Test when API POST Request with invalid api-key" time="0.023"/>
-  <testcase name="When User sends the POST request with the information for content Sheely goes to home fuck monday and cencored character @ and response with Status code 200 received" classname="| Sheely goes to home fuck monday | @ |" time="0"/>
-  <testcase name="Then Display cencored content on console" classname="| Sheely goes to home fuck monday | @ |" time="0"/>
-  <testcase name="| Sheely goes to home fuck monday | @ |" classname="| Sheely goes to home fuck monday | @ |" time="0.002"/>
-  <testcase name="When User sends the POST request with the information for content hellow world and cencored character # and response with Status code 200 received" classname="| hellow world | # |" time="0"/>
+  <testcase name="Scenario: Negative Test when API POST Request with invalid api-key" classname="Scenario: Negative Test when API POST Request with invalid api-key" time="0.067"/>
+  <testcase name="When User sends the POST request with the information for content Sheely goes to home fuck monday and cencored character @ and response with Status code 200 received" classname="| Sheely goes to home fuck monday | @ |" time="0.001"/>
+  <testcase name="Then Display cencored content on console" classname="| Sheely goes to home fuck monday | @ |" time="0.009"/>
+  <testcase name="| Sheely goes to home fuck monday | @ |" classname="| Sheely goes to home fuck monday | @ |" time="0.02"/>
+  <testcase name="When User sends the POST request with the information for content hellow world and cencored character # and response with Status code 200 received" classname="| hellow world | # |" time="0.001"/>
   <testcase name="Then Display cencored content on console" classname="| hellow world | # |" time="0"/>
-  <testcase name="| hellow world | # |" classname="| hellow world | # |" time="0.049"/>
+  <testcase name="| hellow world | # |" classname="| hellow world | # |" time="0.133"/>
 </testsuite>

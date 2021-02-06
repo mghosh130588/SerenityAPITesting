@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <title>Negative Test when API POST request is made with no parameter for required key</title>
+    <title>Check if the BIN LookUp APIis working correctly</title>
     <link rel="shortcut icon" href="favicon.ico">
 
 <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
@@ -40,7 +40,7 @@
         <span class="breadcrumbs">
             <a href="index.html" class="breadcrumbs">Home</a>
 
-            > Negative Test when API POST request is made with no parameter for required key
+            > Check if the BIN LookUp APIis working correctly
         </span>
         </div>
         <div class="rightbg"></div>
@@ -73,7 +73,7 @@
                             <div>
                                 <h3 class="discreet-story-header">
                                     <i class="fa fa-2x fa-comments-o"></i>
-                                    <span class="story-header-title">Testing API For Bad Text Filter</span>
+                                    <span class="story-header-title">Testing API For BIN Look Up</span>
                                 </h3>
 
                                 <div class="discreet-requirement-narrative-title">
@@ -94,7 +94,7 @@
                             <span class="outcome-icon"><i class='fa fa-check-square-o success-icon fa-3x' title='SUCCESS'></i></span>
                             <span class="test-case-title">
                                     <span class="success-color">
-                                    Negative Test When API POST Request Is Made With No Parameter For Required Key
+                                    Check If The BIN Lookup Apiis Working Correctly
                                         <span class="related-issue-title"></span>
                                 </span>
                             </span>
@@ -140,13 +140,13 @@
                         <div class="step-description">
                             <a href="javaScript:void(0)" onClick="toggleDiv('stepSection0')"
                                style="display:block;">
-                            <span class="top-level-step">When User sends a POST request without any value for parameter status code 400 is returned</span>
+                            <span class="top-level-step">When User sends a POSt request to BIN Look Up API with a Valid BIN</span>
                             </a>
 
                         </div>
                     </td>
                     <td width="100"><span class="top-level-step">SUCCESS</span></td>
-                    <td width="100"><span class="top-level-step">0.57s</span></td>
+                    <td width="100"><span class="top-level-step">3.61s</span></td>
                 </tr>
                     <tr>
                     <td colspan="5">
@@ -160,7 +160,7 @@
                     </td>
                     <td>
                         <div class="step-description">
-                            <span class="nested-group-step">POST https://neutrinoapi.com/bad-word-filter?user-id=mghosh&api-key=st2o7Wn8J8rUA7AQpTQjXVKFU5AYFQiPA0zUBHGSBa0s4v4N</span>
+                            <span class="nested-group-step">POST https://neutrinoapi.com/bin-lookup?user-id=mghosh&api-key=st2o7Wn8J8rUA7AQpTQjXVKFU5AYFQiPA0zUBHGSBa0s4v4N</span>
 
                                 <span class="rest-query">
                 <span>
@@ -179,21 +179,21 @@
                                         aria-label="Close"><span aria-hidden="true">&times;</span>
                                 </button>
                                 <h4 class="modal-title" id="restModalLabel">
-                                POST https://neutrinoapi.com/bad-word-filter?user-id=mghosh&api-key=st2o7Wn8J8rUA7AQpTQjXVKFU5AYFQiPA0zUBHGSBa0s4v4N
+                                POST https://neutrinoapi.com/bin-lookup?user-id=mghosh&api-key=st2o7Wn8J8rUA7AQpTQjXVKFU5AYFQiPA0zUBHGSBa0s4v4N
                                 </h4>
                             </div>
                             <div class="modal-body">
-                                    <p>Status code: 400</p>
+                                    <p>Status code: 200</p>
                                     <p>Content Type: application/json</p>
                                     <h5>Request Headers</h5>
                                     <pre>Accept=*/*<br>Content-Type=application/json; charset=UTF-8</pre>
                                     <h5>Content Body</h5>
-                                    <pre>{<br>    &quot;content&quot;: &quot;&quot;,<br>    &quot;censor-character&quot;: &quot;&quot;<br>}</pre>
+                                    <pre>{<br>    &quot;bin-number&quot;: &quot;45178&quot;<br>}</pre>
                                     <h5>Response Headers</h5>
-                                    <pre>Date: Sat, 06 Feb 2021 22:52:13 GMT<br>Server: Neutrino-API<br>Content-Type: application/json;charset=utf-8<br>Content-Length: 153<br>Via: 1.1 google<br>Alt-Svc: clear</pre>
+                                    <pre>Date: Sat, 06 Feb 2021 22:51:49 GMT<br>Server: Neutrino-API<br>Content-Type: application/json;charset=utf-8<br>Content-Length: 225<br>Via: 1.1 google<br>Alt-Svc: clear</pre>
                                 <h5>Response Body</h5>
                                     <pre>
-                                        {<br>    &quot;api-parameter-name&quot;: &quot;content&quot;,<br>    &quot;api-error&quot;: 1,<br>    &quot;api-parameter-type&quot;: &quot;string&quot;,<br>    &quot;api-parameter-required&quot;: true,<br>    &quot;api-error-msg&quot;: &quot;MISSING OR INVALID PARAMETER&quot;<br>}
+                                        {<br>    &quot;country&quot;: &quot;&quot;,<br>    &quot;country-code&quot;: &quot;&quot;,<br>    &quot;card-brand&quot;: &quot;&quot;,<br>    &quot;is-commercial&quot;: false,<br>    &quot;issuer&quot;: &quot;&quot;,<br>    &quot;issuer-website&quot;: &quot;&quot;,<br>    &quot;valid&quot;: false,<br>    &quot;card-type&quot;: &quot;&quot;,<br>    &quot;is-prepaid&quot;: false,<br>    &quot;card-category&quot;: &quot;&quot;,<br>    &quot;issuer-phone&quot;: &quot;&quot;,<br>    &quot;currency-code&quot;: &quot;&quot;,<br>    &quot;country-code3&quot;: &quot;&quot;<br>}
                                     </pre>
                             </div>
                             <div class="modal-footer">
@@ -218,7 +218,7 @@
                 <tr class="test-SUCCESS">
                     <td colspan="2"></td>
                     <td width="100"><span class="top-level-step"><em>SUCCESS</em></span></td>
-                    <td width="100"><span class="top-level-step"><em>0.57s</em></span></td>
+                    <td width="100"><span class="top-level-step"><em>3.78s</em></span></td>
                 </tr>
 
             </table>

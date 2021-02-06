@@ -78,4 +78,12 @@ public class NuvinoAppSteps {
 		
 		System.out.println(cbres.getCensoredContent());
 	}
+	
+	//User sends a POSt request to BIN Look Up API with a Valid BIN
+	@When("^User sends a POSt request to BIN Look Up API with a Valid BIN$")
+	public void BINLookUPres() {
+		SerenityRest.given().log().all().queryParams("user-id","mghosh","api-key","st2o7Wn8J8rUA7AQpTQjXVKFU5AYFQiPA0zUBHGSBa0s4v4N").header("Content-Type","application/json")
+		.body("{\"bin-number\":\"45178\"}").when().post("/bin-lookup")
+		.then().log().all().statusCode(200);
+	}
 }
