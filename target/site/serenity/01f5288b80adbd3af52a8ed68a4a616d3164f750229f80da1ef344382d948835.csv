@@ -1,6 +1,0 @@
-"Story","Title","Result","Date","Stability","Duration (s)"
-"Testing API for BIN Look up","Check if the BIN LookUp APIis working correctly","SUCCESS","2021-02-06T23:52:50.578+01:00","0.0","3.78"
-"Testing API for Bad Text Filter","Check if the Bad Text Filter APLI is working correctly","SUCCESS","2021-02-06T23:52:55.785+01:00","0.0","0.66"
-"Testing API for Bad Text Filter","Check the API POST request reponse for multiple request","SUCCESS","2021-02-06T23:52:57.284+01:00","0.0","0.24"
-"Testing API for Bad Text Filter","Negative Test when API POST Request with invalid api-key","SUCCESS","2021-02-06T23:52:57.091+01:00","0.0","0.12"
-"Testing API for Bad Text Filter","Negative Test when API POST request is made with no parameter for required key","SUCCESS","2021-02-06T23:52:56.480+01:00","0.0","0.57"
