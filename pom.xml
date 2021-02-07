@@ -3,11 +3,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>TestSerenity</groupId>
-  <artifactId>SerenityProj</artifactId>
+  <artifactId>SerenityAPITesting</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <packaging>jar</packaging>
 
-  <name>SerenityProj</name>
+  <name>SerenityAPITesting</name>
   <url>http://maven.apache.org</url>
 <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
