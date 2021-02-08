@@ -4,6 +4,8 @@ import java.io.FileNotFoundException;
 
 import com.nuvino.cucumber.serenity.BadFilterSteps;
 import com.nuvino.cucumber.serenity.BinLookupSteps;
+import com.nuvino.pojo.BINLookUpPojo;
+import com.nuvino.pojo.BINLookUpResponsePojo;
 import com.nuvino.pojo.badtextrequest;
 import com.nuvino.pojo.postbadtextresponse;
 import com.nuvino.utility.ReusableSpecification;
@@ -23,6 +25,7 @@ public class NuvinoAppSteps {
 	BinLookupSteps bins;
 	
 	public postbadtextresponse cbres;
+	public BINLookUpResponsePojo binresp;
 	
 	
 	//User sends a POST request to the API endpoint for a text to check profanity,the endpoint  must return valid status code 200 with the censored content
@@ -84,9 +87,60 @@ public class NuvinoAppSteps {
 	}
 	
 	//User sends a POSt request to BIN Look Up API with a Valid BIN
-	@When("^User sends a POSt request to BIN Look Up API with a Valid BIN$")
-	public void BINLookUPres() throws FileNotFoundException {
-		String binreq = "458913";
-		bins.BinLookUp(binreq);
+		@When("^User sends a POSt request to BIN Look Up API with a Valid BIN$")
+		public void BINLookUPres() throws FileNotFoundException {
+			String binreq = "458345";
+			this.binresp = bins.BinLookUp(binreq);
+		}
+	
+	//User sends a POSt request to BIN Look Up API with a Valid BIN
+	@When("^User sends the POST request with the information for BIN (.*) and response with Status code 200 received$")
+	public void BINLookUPres(String binreq ) throws FileNotFoundException {
+		//String binreq = "458913";
+		this.binresp = bins.BinLookUp(binreq);
+	}
+	
+
+	//
+	//Then Display card details for the given BIN//
+	@Then("^Display card details for the given BIN$")
+	public void carddetails() {
+		
+		System.out.println(binresp.getCardtype().toString() + " card brand " + binresp.getCardbrand().toString());
+	}
+
+	
+//User sends a POST request without any value for parameter BIN status code 400 is returned
+	@When("^User sends a POST request without any value for parameter BIN status code 400 is returned$")
+	public void negativeresultwithnoBIN() throws FileNotFoundException {
+		
+		String binreq = "";
+		BINLookUpPojo b = new BINLookUpPojo();
+	b.setBin(binreq);
+		 String res = SerenityRest.rest().given().log().all()
+		.spec(ReusableSpecification.getRequestSpec()).body(b)
+		.post("/bin-lookup")
+		.then().log().all().statusCode(400).extract().asString();
+		JsonPath js = new JsonPath(res);
+		System.out.println("The error is as " +js.get("api-error-msg").toString());
+		
+		
+	}
+//User sends a POST request with a invalid api-key and valid userid and required valid parameter,403 status code is obtained
+	
+	@When("^User sends a POST request with a invalid api-key and valid userid and required valid parameter,403 status code is obtained$")
+	public void negativetestwithincorrectapikey() {
+		
+		String binreq = "543456";
+		BINLookUpPojo b = new BINLookUpPojo();
+	b.setBin(binreq);
+	
+	String res = SerenityRest.rest().given().log().all()
+			.queryParams("user-id","mghosh","api-key","o7Wn8J8rUA7AQpTQjXVKFU5AYFQiPA0zUBHGSBa0s4v4N").header("Content-Type","application/json")
+			.body(b).post("/bin-lookup")
+			.then().log().all().statusCode(403).extract().asString();
+			JsonPath js = new JsonPath(res);
+			System.out.println("The error is as " +js.get("api-error-msg").toString());
+			
 	}
 }
