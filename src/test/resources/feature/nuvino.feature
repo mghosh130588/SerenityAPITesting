@@ -18,4 +18,3 @@ Scenario Outline: Check the API POST request reponse for multiple request
 	| Sheely goes to home fuck monday | @ |
 	| hellow world | # |
 	
-	
